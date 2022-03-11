@@ -6,7 +6,7 @@ import requests
 import json
 import prettytable
 headers = {'Content-type': 'application/json'}
-data = json.dumps({"seriesid": ['CUUR0000SA0','SUUR0000SA0'],"startyear":"2011", "endyear":"2014"})
+data = json.dumps({"seriesid": ['CUUR0000SA0','SUUR0000SA0'],"startyear":"2011", "endyear":"2014", "registrationkey":"d84940746e714f83a6a428e0cd833a69"})
 p = requests.post('https://api.bls.gov/publicAPI/v2/timeseries/data/', data=data, headers=headers)
 json_data = json.loads(p.text)
 for series in json_data['Results']['series']:
